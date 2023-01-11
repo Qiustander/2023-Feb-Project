@@ -1,0 +1,46 @@
+{
+    "diffusion_config":{
+        "T": 200,
+        "beta_0": 0.0001,
+        "beta_T": 0.02
+    },
+    "model_config": {
+        "num_res_layers": 36,
+        "res_channels": 256,
+        "skip_channels": 256,
+        "diffusion_step_embed_dim_in": 128,
+        "diffusion_step_embed_dim_mid": 512,
+        "diffusion_step_embed_dim_out": 512,
+        "s4_d_state":64,
+        "s4_dropout":0.0,
+        "s4_bidirectional":1,
+        "s4_layernorm":1
+    },
+    "train_config": {
+        "n_iters": 150000,
+        "learning_rate": 2e-4,
+        "only_generate_missing": 1,
+        "use_model": 1,
+        "masking": "rm",
+        "missing_k": 90
+    },
+    "dataset_config":{
+        "data_path": "./data",
+        "batch_size": 20,
+        "random_test_num": 40,
+        "sampling_rate": 100,
+        "num_samples": 50,
+        "multiple_gpu": false
+    },
+    "log_config":{
+        "iters_per_ckpt": 3000,
+        "iters_per_logging": 10,
+        "ckpt_iter": -1,
+        "project_name": "MLCOE_Project",
+        "version": "v4",
+        "dry_run": false,
+        "ckpt_path": "./result/save_checkpoint",
+        "output_dir": "./result",
+        "save_model_num": 10
+    }
+}
